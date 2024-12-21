@@ -9,10 +9,28 @@ body,
 html {
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Animated Gradient Background */
   background: linear-gradient(135deg, #ff4e50, #007810);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+
   color: #fff;
   overflow-x: hidden;
   position: relative;
+}
+
+/* This keyframe animates the gradient background */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Main Content Container */
@@ -41,6 +59,8 @@ html {
   color: #ffeb3b; /* Bright gold color */
   margin-bottom: 10px;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+
+  /* Sparkle animation on the text */
   animation: sparkle 3s infinite alternate;
 }
 
