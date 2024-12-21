@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎄 Merry Christmas from the Family! 🎄</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts for a more festive look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mountains+of+Christmas:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Snowflakes Container -->
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+      <source src="music/background-music.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control Button -->
+    <div
+      class="music-control"
+      onclick="toggleMusic()"
+      aria-label="Toggle Music"
+    >
+      <span id="music-icon">❚❚</span>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+      <!-- Family Greeting -->
+      <div class="greeting">
+        <h1>🎄 Merry Christmas! 🎄</h1>
+        <p>Wishing you an amazing Christmas from our Family.</p>
+        <p>Sending love, joy, and plenty of holiday cheer!</p>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <h3>Countdown to Christmas:</h3>
+        <div id="timer">
+          <span id="days">0</span> Days <span id="hours">0</span> Hours
+          <span id="minutes">0</span> Minutes
+          <span id="seconds">0</span> Seconds
+        </div>
+      </div>
+
+      <!-- Image Slideshow -->
+      <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="mySlides fade">
+          <img src="images/photo1.jpeg" alt="Family Photo 1" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo2.jpeg" alt="Family Photo 2" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo3.gif" alt="Family Photo 3" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo4.jpeg" alt="Family Photo 4" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo5.jpeg" alt="Family Photo 5" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo6.png" alt="Family Photo 6" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo7.jpeg" alt="Family Photo 7" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo8.jpeg" alt="Family Photo 8" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo9.jpeg" alt="Family Photo 9" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo10.png" alt="Family Photo 10" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo11.jpeg" alt="Family Photo 11" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo12.jpeg" alt="Family Photo 12" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo13.jpeg" alt="Family Photo 13" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/photo14.jpeg" alt="Family Photo 14" />
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusSlides(-1)" aria-label="Previous Slide"
+          >&#10094;</a
+        >
+        <a class="next" onclick="plusSlides(1)" aria-label="Next Slide"
+          >&#10095;</a
+        >
+      </div>
+
+      <!-- Additional Festive Elements -->
+      <div class="decorations">
+        <img
+          src="images/christmas-tree.png"
+          alt="Christmas Tree"
+          class="decoration tree"
+        />
+        <img
+          src="images/snowman.png"
+          alt="Snowman"
+          class="decoration snowman"
+        />
+        <img src="images/gift.png" alt="Gift" class="decoration gift" />
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      onclick="scrollToTop()"
+      aria-label="Scroll to Top"
+    >
+      ⬆️
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

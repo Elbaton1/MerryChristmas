@@ -1,0 +1,522 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ff4e50, #008512);
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Main Content Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Heartfelt Greeting */
+.greeting {
+  margin-bottom: 30px;
+  animation: fadeInDown 2s ease-out;
+}
+
+.greeting h1 {
+  font-family: "Mountains of Christmas", cursive;
+  font-size: 3.5rem;
+  color: #ffeb3b; /* Bright gold color */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  animation: sparkle 3s infinite alternate;
+}
+
+.greeting p {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 2s ease-out;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+/* Fade Animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Zoom In Animation for Images */
+.mySlides img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.5s, box-shadow 0.5s;
+  object-fit: cover;
+  animation: zoomIn 1.5s ease;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.mySlides img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.7);
+}
+
+/* Next & Previous Buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 15px;
+  margin-top: -22px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 50%;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(255, 235, 59, 0.7);
+  transform: scale(1.1);
+}
+
+/* Countdown Timer */
+.countdown {
+  text-align: center;
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+  animation-delay: 3s;
+}
+
+.countdown h3 {
+  font-size: 1.8rem;
+  color: #ffeb3b;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#timer {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+#timer span {
+  background-color: rgba(255, 235, 59, 0.2);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+}
+
+/* Decorations */
+.decorations {
+  position: relative;
+  margin-top: 20px;
+  animation: fadeInUp 2s ease;
+}
+
+.decoration {
+  max-width: 80px;
+  margin: 0 10px;
+  display: inline-block;
+  animation: bounceIn 1.3s ease forwards;
+  opacity: 0;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-10px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Music Control Button */
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.music-control:hover {
+  background-color: rgba(255, 235, 59, 0.7);
+  transform: scale(1.1);
+}
+
+.music-control span {
+  color: #fff;
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ffeb3b;
+  color: #333;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 10;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #fff176;
+  transform: scale(1.1);
+}
+
+/* Snowflakes Container */
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 500;
+  overflow: hidden;
+}
+
+/* Individual Snowflake Styles */
+.snowflake {
+  position: absolute;
+  top: -10vh;
+  color: white;
+  user-select: none;
+  font-size: 1em;
+  opacity: 0.8;
+  animation: snowFall linear infinite;
+}
+
+/* Generate Multiple Snowflakes */
+.snowflake:nth-child(1) {
+  left: 10%;
+  font-size: 1.5rem;
+  animation-duration: 10s;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+  left: 20%;
+  font-size: 1rem;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-child(3) {
+  left: 30%;
+  font-size: 2rem;
+  animation-duration: 14s;
+  animation-delay: 4s;
+}
+
+.snowflake:nth-child(4) {
+  left: 40%;
+  font-size: 1.2rem;
+  animation-duration: 11s;
+  animation-delay: 1s;
+}
+
+.snowflake:nth-child(5) {
+  left: 50%;
+  font-size: 1.8rem;
+  animation-duration: 13s;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-child(6) {
+  left: 60%;
+  font-size: 1rem;
+  animation-duration: 10s;
+  animation-delay: 5s;
+}
+
+.snowflake:nth-child(7) {
+  left: 70%;
+  font-size: 1.4rem;
+  animation-duration: 12s;
+  animation-delay: 2.5s;
+}
+
+.snowflake:nth-child(8) {
+  left: 80%;
+  font-size: 1.6rem;
+  animation-duration: 11s;
+  animation-delay: 3.5s;
+}
+
+.snowflake:nth-child(9) {
+  left: 90%;
+  font-size: 1.3rem;
+  animation-duration: 14s;
+  animation-delay: 1.5s;
+}
+
+.snowflake:nth-child(10) {
+  left: 25%;
+  font-size: 1.7rem;
+  animation-duration: 13s;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-child(11) {
+  left: 35%;
+  font-size: 1.2rem;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-child(12) {
+  left: 45%;
+  font-size: 1.5rem;
+  animation-duration: 12s;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-child(13) {
+  left: 55%;
+  font-size: 1rem;
+  animation-duration: 11s;
+  animation-delay: 1s;
+}
+
+.snowflake:nth-child(14) {
+  left: 65%;
+  font-size: 1.8rem;
+  animation-duration: 13s;
+  animation-delay: 4s;
+}
+
+.snowflake:nth-child(15) {
+  left: 75%;
+  font-size: 1.4rem;
+  animation-duration: 10s;
+  animation-delay: 2.5s;
+}
+
+.snowflake:nth-child(16) {
+  left: 85%;
+  font-size: 1.6rem;
+  animation-duration: 14s;
+  animation-delay: 3.5s;
+}
+
+.snowflake:nth-child(17) {
+  left: 95%;
+  font-size: 1.3rem;
+  animation-duration: 12s;
+  animation-delay: 1.5s;
+}
+
+.snowflake:nth-child(18) {
+  left: 15%;
+  font-size: 1.7rem;
+  animation-duration: 13s;
+  animation-delay: 0s;
+}
+
+/* Snowfall Animation */
+@keyframes snowFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Heartfelt Greeting Animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sparkle Animation for the Merry Christmas text */
+@keyframes sparkle {
+  0% {
+    text-shadow: 2px 2px 6px rgba(255, 215, 0, 0.5);
+    color: #ffeb3b;
+  }
+  50% {
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.9);
+    color: #ffffff;
+  }
+  100% {
+    text-shadow: 2px 2px 6px rgba(255, 235, 59, 0.7);
+    color: #ffeb3b;
+  }
+}
+
+/* Fade Up Animation for Countdown */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In for Container */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .greeting h1 {
+    font-size: 2.5rem;
+  }
+
+  .greeting p {
+    font-size: 1.2rem;
+  }
+
+  .music-control {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .prev,
+  .next {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .slideshow-container {
+    max-width: 95%;
+  }
+
+  #timer {
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+
+  #scrollToTopBtn {
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+
+  .countdown h3 {
+    font-size: 1.5rem;
+  }
+
+  .snowflake {
+    font-size: 1rem;
+  }
+
+  .decoration {
+    max-width: 60px;
+  }
+}
