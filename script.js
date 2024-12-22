@@ -1,19 +1,19 @@
-// Background Music Control
-const music = document.getElementById("background-music");
-const musicControl = document.querySelector(".music-control");
+/* Background Music Control */
+let musicPlaying = false;
+const backgroundMusic = document.getElementById("background-music");
 const musicIcon = document.getElementById("music-icon");
-
-// Reference to the arrow hint
 const arrowHint = document.getElementById("arrowHint");
 
 // Function to toggle music play/pause
 function toggleMusic() {
-  if (music.paused) {
-    music.play();
-    musicIcon.textContent = "❚❚"; // Pause icon
+  if (musicPlaying) {
+    backgroundMusic.pause();
+    musicIcon.innerHTML = "▶️"; // Play icon
+    musicPlaying = false;
   } else {
-    music.pause();
-    musicIcon.textContent = "▶️"; // Play icon
+    backgroundMusic.play();
+    musicIcon.innerHTML = "❚❚"; // Pause icon
+    musicPlaying = true;
   }
 
   // Hide the arrow hint once user has interacted
@@ -22,14 +22,14 @@ function toggleMusic() {
 
 // Initialize with music playing and countdown
 window.onload = function () {
-  music.play().catch((error) => {
+  backgroundMusic.play().catch((error) => {
     console.log("Autoplay was prevented:", error);
-    musicIcon.textContent = "▶️"; // Show play icon if autoplay fails
+    musicIcon.innerHTML = "▶️"; // Show play icon if autoplay fails
   });
   countdown();
 };
 
-// Slideshow Functionality
+/* Slideshow Functionality */
 let slideIndex = 0;
 let slides = document.getElementsByClassName("mySlides");
 let slideInterval;
@@ -67,7 +67,7 @@ function plusSlides(n) {
   slideInterval = setTimeout(showSlides, 5000); // Reset the interval
 }
 
-// Scroll to Top Button
+/* Scroll to Top Button */
 const scrollBtn = document.getElementById("scrollToTopBtn");
 
 window.onscroll = function () {
@@ -89,7 +89,7 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Countdown Timer
+/* Countdown Timer */
 function countdown() {
   // Set your future date here (adjust year if needed)
   const countDate = new Date("December 25, 2024 00:00:00").getTime();
@@ -122,3 +122,23 @@ function countdown() {
 }
 
 const timerInterval = setInterval(countdown, 1000);
+
+/* Simple Santa Tracker Logic */
+// Update Santa's status based on position
+const santaElement = document.getElementById("santa");
+const santaStatus = document.getElementById("santa-status");
+
+// Function to update Santa's status (optional enhancement)
+function updateSantaStatus() {
+  // You can customize status updates based on Santa's position
+  // For simplicity, we'll just display a generic message
+  santaStatus.innerText = "Santa is on his way! 🎅";
+}
+
+// Initialize status
+updateSantaStatus();
+
+// Optionally, update status when Santa completes a loop
+santaElement.addEventListener("animationiteration", () => {
+  updateSantaStatus();
+});
