@@ -552,7 +552,8 @@ html {
 
 .world-map {
   width: 100%;
-  border: 2px solid #ffeb3b00;
+  height: auto; /* Maintain aspect ratio */
+  border: 2px solid transparent; /* Removed the 00 opacity */
   border-radius: 10px;
 }
 
@@ -569,7 +570,7 @@ html {
 /* Santa Movement Animation */
 @keyframes moveSanta {
   0% {
-    left: 0%;
+    left: -10%; /* Start off-screen */
     transform: translate(-50%, -50%) rotate(0deg);
   }
   25% {
@@ -585,7 +586,7 @@ html {
     transform: translate(-50%, -50%) rotate(270deg);
   }
   100% {
-    left: 100%;
+    left: 110%; /* Move off-screen */
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
@@ -657,12 +658,13 @@ html {
   }
 
   .world-map {
-    height: 100px;
+    max-width: 100%;
+    height: auto; /* Ensure height adjusts based on width */
   }
 
   .santa {
-    width: 10px;
-    height: 5px;
+    width: 60px; /* Reduce size for mobile */
+    height: 48px; /* Maintain aspect ratio */
   }
 
   #santa-status {
