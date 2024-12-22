@@ -657,12 +657,12 @@ html {
   }
 
   .world-map {
-    height: 300px;
+    height: 100px;
   }
 
   .santa {
-    width: 80px;
-    height: 40px;
+    width: 10px;
+    height: 5px;
   }
 
   #santa-status {
