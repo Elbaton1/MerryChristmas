@@ -560,7 +560,7 @@ html {
 .santa {
   position: absolute;
   top: 50%;
-  left: 0%;
+  left: -10%; /* Start off-screen */
   width: 100px;
   height: 80px;
   transform: translate(-50%, -50%);
@@ -663,8 +663,9 @@ html {
   }
 
   .santa {
-    width: 10px; /* Reduce size for mobile */
-    height: 18px; /* Maintain aspect ratio */
+    width: 60px; /* Reduce size for mobile */
+    height: 48px; /* Maintain aspect ratio */
+    left: -15%; /* Slightly more off-screen to accommodate smaller size */
   }
 
   #santa-status {
