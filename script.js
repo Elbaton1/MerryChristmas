@@ -3,6 +3,9 @@ const music = document.getElementById("background-music");
 const musicControl = document.querySelector(".music-control");
 const musicIcon = document.getElementById("music-icon");
 
+// Reference to the arrow hint
+const arrowHint = document.getElementById("arrowHint");
+
 // Function to toggle music play/pause
 function toggleMusic() {
   if (music.paused) {
@@ -12,6 +15,9 @@ function toggleMusic() {
     music.pause();
     musicIcon.textContent = "▶️"; // Play icon
   }
+
+  // Hide the arrow hint once user has interacted
+  arrowHint.style.display = "none";
 }
 
 // Initialize with music playing and countdown
