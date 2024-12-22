@@ -663,8 +663,8 @@ html {
   }
 
   .santa {
-    width: 60px; /* Reduce size for mobile */
-    height: 48px; /* Maintain aspect ratio */
+    width: 10px; /* Reduce size for mobile */
+    height: 18px; /* Maintain aspect ratio */
   }
 
   #santa-status {
